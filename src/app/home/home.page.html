@@ -1,0 +1,39 @@
+<ion-header style="z-index:0;">
+  <ion-toolbar>
+    <ion-title color="danger" style="text-align: center;">
+        Audio Recorder
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <div style="margin-top:40%;">
+  <ion-label>
+    <ion-text color="danger">
+      <h1 style="text-align: center;font-size: 50px;">{{hours}}:{{minutes}}:{{seconds}}</h1>
+    </ion-text>
+  </ion-label>
+  <ion-icon (click)="RecordAudio()" style="font-size:50px;width:100%;"  color="danger" [name]="iconname"></ion-icon>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col><ion-input style="border-color:black;border-width:thin;border-style:solid;" [(ngModel)]="apiurl" placeholder="Enter api url"></ion-input></ion-col>
+    </ion-row>
+      <br />
+      <ion-row>
+      <ion-col><ion-input style="border-color:black;border-width:thin;border-style:solid;" [(ngModel)]="session" placeholder="Enter sessionid"></ion-input></ion-col>
+    </ion-row>
+      <br />
+      <ion-row>
+      <ion-col><ion-input style="border-color:black;border-width:thin;border-style:solid;" [(ngModel)]="room" placeholder="Enter room"></ion-input></ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col><ion-button (click)="callAPI()">post api</ion-button></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
