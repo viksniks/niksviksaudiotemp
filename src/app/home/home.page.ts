@@ -37,7 +37,7 @@ export class HomePage {
   }
   ngOnInit()
   {
-    
+     
   }
   playMedia()
   {
@@ -107,6 +107,7 @@ resumeRecording()
       this.audioFileTemp = new Blob([res], {type: "audio/wav"})
     })
 
+    this.generatesRandomNumber();
 
   
    
@@ -119,21 +120,20 @@ resumeRecording()
   }
 
 
+  generatesRandomNumber()
+  {
+    var minm = 10000000000; 
+    var maxm = 99999999999; 
+    var num = Math.floor(Math 
+    .random() * (maxm - minm + 1)) + minm; 
+    this.session = num.toString();
+  }
+  
   callAPI()
   {
-  //   var url = "";
-  //   var dataToSend={};
-  //  this.http.post(url,dataToSend,{ "Content-Type": "application/json"}).then((data)=>{
-  //    //datareceived from api
-  //  },(err)=>{
-  //    alert(JSON.stringify(err));
-  //  })
+  
   let form = new FormData();
-  // alert(this.audioFileTemp);
-  // alert(this.audioName);
-  // alert(this.room);
-  // alert(this.session);
-  // alert(this.apiurl);
+  
   form.append("audio",this.audioFileTemp);
   form.append("Audio_name",this.audioName);
   form.append("room",this.room);
